@@ -1,14 +1,22 @@
 const getScoreJson = require("./event-score");
 var seedrandom = require('seedrandom');
 
-module.exports = (seed, prizes, logsData) => {
-    var random = seedrandom(seed.toString());
+module.exports = (seed, prizes, logsData, options = {}) => {
+    let random;
+    if(options.algo){
+        random = seedrandom[options.algo](seed.toString(), options);
+    }else{
+        random = seedrandom(seed.toString(), options);
+    }
+    
 
     const winners = [];
     const scores = getScoreJson(logsData);
 
-    let names = scores.reduce((acc,current) => [...acc, ...new Array(current.score).fill(current.name)], []);
-    names = shuffle(names);
+    let names = scores
+        .reduce((acc,current) => [...acc, ...new Array(current.score).fill(current.name)], [])
+        .sort((a,b)=>a.localeCompare(b));
+    
     let i = prizes;
     
     while(i--){
@@ -21,15 +29,4 @@ module.exports = (seed, prizes, logsData) => {
     }
     
     return winners;
-
-    function shuffle(a) {
-        var j, x, i;
-        for (i = a.length - 1; i > 0; i--) {
-            j = Math.floor(random() * (i + 1));
-            x = a[i];
-            a[i] = a[j];
-            a[j] = x;
-        }
-        return a;
-    }
 }
