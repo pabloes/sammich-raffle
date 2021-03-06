@@ -9,8 +9,7 @@ if(!myArgs[0]) {
 }
 
 (async ()=>{
-    const logsData = await axios.get("https://mana-fever.com/logs-json").then((response)=>response.data);
-    const winners = getRaffleResult(myArgs[0], 6, logsData);
+    const winners = getRaffleResult(myArgs[0], 6);
     const prizes = `helmet,upbody,pants,sneakers,fins,hair`.split(',');
     
     console.log(winners.map((name, index) => {
