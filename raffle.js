@@ -1,4 +1,3 @@
-const getScoreJson = require("./event-score");
 var seedrandom = require('seedrandom');
 var tickets= require('./dcl1yo');
 
