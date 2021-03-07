@@ -1,4 +1,4 @@
-module.exports = { // JUST FOR TEST, HAVE TO UPDATE AFTER 2021-03-06:23:59:59
+module.exports = {
     Nhine: 9,
     Rider: 9,
     Rhule: 8,
