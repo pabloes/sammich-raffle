@@ -1,5 +1,4 @@
 const getRaffleResult = require('./raffle');
-const axios = require("axios");
 
 var myArgs = process.argv.slice(2);
 

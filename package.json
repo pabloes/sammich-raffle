@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/pabloes/sammich-raffle#readme",
   "description": "",
-  "dependencies": {    
+  "dependencies": {
     "seedrandom": "^3.0.5"
   }
 }
