@@ -103,3 +103,6 @@ dist
 # TernJS port file
 .tern-port
 util
+dev-secret-key.js
+seaunicorn-results_.js
+fromPlayfabToAddress.js

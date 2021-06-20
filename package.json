@@ -17,6 +17,7 @@
   "homepage": "https://github.com/pabloes/sammich-raffle#readme",
   "description": "",
   "dependencies": {
+    "node-fetch": "^2.6.1",
     "seedrandom": "^3.0.5"
   }
 }
