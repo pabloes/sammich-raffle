@@ -1,5 +1,12 @@
+var fs = require("fs");
 var seedrandom = require('seedrandom');
-var tickets= require('./dcl1yo');
+
+//var tickets= require('./dcl1yo');
+var addresses = JSON.parse(fs.readFileSync('addresses.json', "utf8"));
+var tickets = addresses.reduce((acc,address)=>{
+    acc[address] = (acc[address]||0) + 1;
+    return acc;
+},{});
 
 module.exports = (seed, prizes, logsData, options = {}) => {
     let random;
