@@ -8,10 +8,11 @@ if(!myArgs[0]) {
 }
 
 (async ()=>{
-    const winners = getRaffleResult(myArgs[0], 1);
+    const winners = getRaffleResult(myArgs[0], 10);
+    console.log(winners)
    // const prizes = `helmet,upbody,pants,sneakers,fins,hair`.split(',');
     const prizes = `cap`.split(',');
     console.log(winners.map((name, index) => {
-        return `${prizes[index]}: ${name}`;
+        return `${name}`;
     }).join('\n'));
 })();
