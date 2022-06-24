@@ -11,7 +11,7 @@ if(!myArgs[0]) {
     const winners = getRaffleResult(myArgs[0], 10);
     console.log(winners)
    // const prizes = `helmet,upbody,pants,sneakers,fins,hair`.split(',');
-    const prizes = `cap`.split(',');
+    const prizes = `winner`.split(',');
     console.log(winners.map((name, index) => {
         return `${name}`;
     }).join('\n'));
